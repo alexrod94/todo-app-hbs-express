@@ -19,6 +19,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static("public"));
 app.set("views", __dirname + "/views");
 app.set("view engine", "hbs");
+hbs.registerPartials(__dirname + "/views/partials");
 
 // read
 app.get("/", async (req, res) => {
@@ -60,7 +61,7 @@ app.post("/todos/update/:id", async (req, res) => {
 //delete
 app.get("/todos/delete/:id", async (req, res) => {
   const id = req.params.id;
-  await Todo.findByIdAndDelete(id);
+  const todo = await Todo.findByIdAndDelete(id);
   res.render("completed");
 });
 

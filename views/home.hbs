@@ -1,12 +1,17 @@
 <h2>Current todos</h2>
-<ul>
+<ul class="list-group">
 
   {{#each todos}}
-    <li><span>{{this.title}} </span><a
+    <li class="list-group-item"><span>{{this.title}} </span><a
         href="/update-todo/{{this.id}}"
-      >Update</a>
-      <a href="/todos/delete/{{this.id}}">Delete</a></li>
+      ><i class="bi bi-pencil-fill"></i></a>
+      <a href="/todos/delete/{{this.id}}"><i
+          class="bi bi-trash3-fill text-danger"
+        ></i></a></li>
   {{/each}}
 </ul>
 <br />
-<button><a href="/create-todo">Add new todo</a></button>
+<button class="btn btn-primary"><a
+    href="/create-todo"
+    class="text-white decoration-none"
+  >Add new todo</a></button>
