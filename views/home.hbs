@@ -1,0 +1,12 @@
+<h2>Current todos</h2>
+<ul>
+
+  {{#each todos}}
+    <li><span>{{this.title}} </span><a
+        href="/update-todo/{{this.id}}"
+      >Update</a>
+      <a href="/todos/delete/{{this.id}}">Delete</a></li>
+  {{/each}}
+</ul>
+<br />
+<button><a href="/create-todo">Add new todo</a></button>
